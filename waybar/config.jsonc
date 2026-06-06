@@ -1,0 +1,93 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 12,
+
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "network",
+        "custom/wifi",
+        "custom/bluetooth",
+        "custom/battery",
+        "temperature",
+        "battery",
+        "custom/power"
+
+    ],
+
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    },
+
+    "network": {
+        "format-wifi": "📶 {essid}  {signalStrength}%",
+        "format-ethernet": "🌐 conectado",
+        "format-disconnected": "❌ offline",
+        "tooltip-format-wifi": "📡 {essid}\n📍 IP: {ipaddr}\n📶 Señal: {signalStrength}%"
+    },
+
+    "custom/wifi": {
+        "format": "",
+        "on-click": "~/.config/waybar/scripts/wifi.sh"
+    },
+    
+    "battery": {
+        "states": {
+        "warning": 30,
+        "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time}  {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/bluetooth": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Bluetooth",
+        "on-click": "blueman-manager"
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Apagar sistema",
+        "on-click": "systemctl poweroff"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 60
+    },
+
+    "temperature": {
+        "interval": 10,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": " {temperatureC}",
+        "format": " {temperatureC}°C"
+    }
+    
+    
+}

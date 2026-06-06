@@ -1,0 +1,80 @@
+* {
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#waybar {
+    margin: 10px 20px;
+}
+
+/* CONTENEDOR GENERAL (simula flotante) */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(30, 30, 46, 0.85);
+    border-radius: 16px;
+    padding: 6px 12px;
+    margin: 0 6px;
+}
+
+/* SOMBRA (efecto flotante) */
+.modules-left,
+.modules-center,
+.modules-right {
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+}
+
+/* WORKSPACE */
+#workspaces button {
+    padding: 4px 8px;
+    border-radius: 10px;
+    margin: 0 2px;
+}
+
+#workspaces button.active {
+    background: #89b4fa;
+    color: #1e1e2e;
+}
+
+/* CENTRO (ventana) */
+#window {
+    padding: 0 10px;
+}
+
+/* ICONOS DERECHA */
+#network,
+#battery,
+#custom-bluetooth,
+#temperature,
+#custom-wifi,
+#custom-power {
+    padding: 0 8px;
+    border-radius: 10px;
+}
+
+#network {
+    color: #f38ba8;
+}
+
+#custom-battery {
+    color: #f38ba8;
+}
+
+#custom-bluetooth {
+    color: #f38ba8;
+}
+
+#custom-power {
+    color: #f38ba8;
+}
+
+#custom-wifi {
+    color: #f38ba8;
+}
+
+#temperature{color: #f38ba8;}
+#battery{color: #f38ba8;}
