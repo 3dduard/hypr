@@ -9,18 +9,19 @@
     ],
 
     "modules-center": [
-        "hyprland/window"
+        "hyprland/window",
+        "clock"
     ],
 
     "modules-right": [
         "network",
         "custom/wifi",
-        "custom/bluetooth",
+        "bluetooth",
         "custom/battery",
         "temperature",
         "battery",
+        "pulseaudio",
         "custom/power"
-
     ],
 
     "custom/arch": {
@@ -31,27 +32,40 @@
 
     "network": {
         "format-wifi": "📶 {essid}  {signalStrength}%",
-        "format-ethernet": "🌐 conectado",
-        "format-disconnected": "❌ offline",
-        "tooltip-format-wifi": "📡 {essid}\n📍 IP: {ipaddr}\n📶 Señal: {signalStrength}%"
+        "format-ethernet": "🌐",
+        "format-disconnected": "❌",
+        "tooltip-format-wifi": "📡 {essid}\n📍 IP: {ipaddr}\n📶 Señal: {signalStrength}%",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
 
     "custom/wifi": {
         "format": "",
         "on-click": "~/.config/waybar/scripts/wifi.sh"
     },
+
+    "clock":{
+        "format": "{:%A %d %H:%M}",
+        "on-click": "gnome-calendar"
+        
+    },
     
-    "battery": {
+   "battery": {
         "states": {
-        "warning": 30,
-        "critical": 15
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time}  {icon}",
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰃨",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
     },
 
     "custom/bluetooth": {
@@ -59,6 +73,17 @@
         "tooltip": true,
         "tooltip-format": "Bluetooth",
         "on-click": "blueman-manager"
+    },
+
+    "bluetooth": {
+        "format": " ",
+        "format-disable": "",
+        "format-connected":" {num_connections}",
+        "toolti-format":"{controller_alias}\t{controller_address}",
+        "toolti-format-connected":"{controller_alias}\t{controller_address}\n\n{device_enumeration}",
+        "toolti-format-enumeration-connected":"{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+
     },
 
     "custom/power": {
@@ -77,7 +102,7 @@
     },
 
     "hyprland/window": {
-        "format": "{}",
+        "format": "{class}",
         "max-length": 60
     },
 
@@ -87,7 +112,25 @@
         "critical-threshold": 100,
         "format-critical": " {temperatureC}",
         "format": " {temperatureC}°C"
-    }
-    
+    },
+
+    "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+        "headphone": "󰋋",
+        "hands-free": "󰋎",
+        "headset": "󰋎",
+        "phone": "󰏲",
+        "portable": "󰄝",
+        "car": "󰄋",
+        "default": [
+            "󰕿",
+            "󰖀",
+            "󰕾"
+        ]
+    },
+    "on-click": "pavucontrol"
+}
     
 }

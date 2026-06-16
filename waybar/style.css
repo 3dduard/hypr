@@ -8,13 +8,14 @@ window#waybar {
 }
 
 #waybar {
-    margin: 10px 20px;
+    margin: 14px 22px;
 }
 
 /* CONTENEDOR GENERAL (simula flotante) */
 .modules-left,
 .modules-center,
 .modules-right {
+    color: aliceblue;
     background: rgba(30, 30, 46, 0.85);
     border-radius: 16px;
     padding: 6px 12px;
@@ -25,7 +26,12 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
+    color: white;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+}
+
+#custom-arch {
+    color: #1793d1; /* Ícono Arch azul */
 }
 
 /* WORKSPACE */
@@ -40,6 +46,10 @@ window#waybar {
     color: #1e1e2e;
 }
 
+#clock{ 
+    padding: 0 10px;
+}
+
 /* CENTRO (ventana) */
 #window {
     padding: 0 10px;
@@ -48,10 +58,12 @@ window#waybar {
 /* ICONOS DERECHA */
 #network,
 #battery,
-#custom-bluetooth,
+#bluetooth,
 #temperature,
 #custom-wifi,
-#custom-power {
+#custom-power,
+#custom-media,
+#pulseaudio {
     padding: 0 8px;
     border-radius: 10px;
 }
@@ -64,7 +76,7 @@ window#waybar {
     color: #f38ba8;
 }
 
-#custom-bluetooth {
+#bluetooth {
     color: #f38ba8;
 }
 
@@ -78,3 +90,7 @@ window#waybar {
 
 #temperature{color: #f38ba8;}
 #battery{color: #f38ba8;}
+
+#pulseaudio{
+    color: #1793d1;
+}
